@@ -37,11 +37,14 @@ public class TapPreferenceController extends AbstractPreferenceController
     private static final String KEY = "gesture_tap";
     private static final String AMBIENT_KEY = "doze_tap_gesture_ambient";
     private static final String VIB_KEY = "doze_tap_gesture_vibrate";
+    private static final String AOD_KEY = "doze_tap_gesture_allow_ambient";
 
     private final Context mContext;
     private MainSwitchPreference mSwitch;
     private SecureSettingSwitchPreference mAmbientPref;
     private SecureSettingSwitchPreference mVibPref;
+    private SecureSettingSwitchPreference mAODPref;
+
     private boolean mIsVibAvailable;
 
     public TapPreferenceController(Context context) {
@@ -59,6 +62,7 @@ public class TapPreferenceController extends AbstractPreferenceController
         super.displayPreference(screen);
         mAmbientPref = screen.findPreference(AMBIENT_KEY);
         mVibPref = screen.findPreference(VIB_KEY);
+        mAODPref = screen.findPreference(AOD_KEY);
         mSwitch = screen.findPreference(getPreferenceKey());
         mSwitch.setOnPreferenceClickListener(preference -> {
             final boolean enabled = Settings.Secure.getInt(mContext.getContentResolver(),
@@ -113,5 +117,8 @@ public class TapPreferenceController extends AbstractPreferenceController
         if (mVibPref != null && mIsVibAvailable) {
             mVibPref.setEnabled(enabled);
         }
+        if (mAODPref != null) {
+	    mAODPref.setEnabled(enabled);
+	}
     }
 }

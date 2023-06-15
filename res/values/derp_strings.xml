@@ -464,6 +464,7 @@
     <string name="caution">Caution</string>
     <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
     <string name="pickup_sensor" translatable="false"></string>
+
     <!-- Display settings screen, red color balance setting slider [CHAR LIMIT=NONE] -->
     <string name="color_mode_balance_red">Red strength</string>
     <!-- Display settings screen, green color balance setting slider [CHAR LIMIT=NONE] -->
@@ -514,4 +515,9 @@
     <!-- Edge grip suppression -->
     <string name="edge_grip_suppression_title">Edge grip suppression width</string>
     <string name="edge_grip_suppression_summary">Adjust the curved-edge grip suppression width. 3 is the stock width</string>
+
+    <!-- wake gestures on AOD -->
+    <string name="doze_gesture_allow_ambient_title">Allow on Ambient</string>
+    <string name="doze_gesture_allow_ambient_summary">Allow this gesture to work on always on and ambient display</string>
+
 </resources>
